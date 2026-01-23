@@ -13,14 +13,12 @@
 
 .posts-container {
     max-width: 1280px;
-    margin: 0 auto 4rem;
-    padding: 0 2rem;
+    margin: 0 auto 2rem;
 }
 
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 0.25rem;
 }
 
 .post-card {
