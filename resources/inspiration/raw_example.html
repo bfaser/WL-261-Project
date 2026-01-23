@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Declassified</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #242424;
+            --accent: #a855f7;
+            --accent-hover: #9333ea;
+            --text-primary: #ffffff;
+            --text-secondary: #b4b4b4;
+            --border: #333333;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 0;
+        }
+
+        .top-bar-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        .top-bar-left {
+            color: var(--text-secondary);
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .top-bar-right a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .top-bar-right a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            background: var(--bg-primary);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-accent {
+            color: var(--accent);
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            max-width: 1280px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .hero-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            height: 500px;
+            background: linear-gradient(to bottom right, #4c1d95, #5b21b6, #6d28d9);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.03) 30%, rgba(255,255,255,0.03) 70%, transparent 70%);
+            background-size: 30px 30px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .hero-category {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-date {
+            color: var(--text-secondary);
+        }
+
+        .hero-excerpt {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .hero-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .section-header {
+            max-width: 1280px;
+            margin: 4rem auto 2rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .view-all {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        .posts-container {
+            max-width: 1280px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .post-image {
+            height: 240px;
+            background: linear-gradient(135deg, #4c1d95, #6d28d9);
+            position: relative;
+        }
+
+        .post-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 4px,
+                    rgba(255,255,255,0.02) 4px,
+                    rgba(255,255,255,0.02) 8px
+                );
+        }
+
+        .post-content {
+            padding: 1.75rem;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .post-category {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .post-date {
+            color: var(--text-secondary);
+        }
+
+        .post-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+        }
+
+        .post-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .categories-section {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            margin: 4rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .categories-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .categories-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--bg-tertiary);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-article {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">Thursday, January 15, 2026</div>
+            <div class="top-bar-right">
+                <a href="#subscribe">Subscribe</a>
+                <a href="#newsletter">Newsletter</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">INTELLIGENCE <span class="logo-accent">DECLASSIFIED</span></div>
+                <div class="tagline">Investigating America's Secret History Through Declassified Documents</div>
+            </div>
+            <nav>
+                <a href="#latest">Latest</a>
+                <a href="#investigations">Investigations</a>
+                <a href="#cold-war">Cold War</a>
+                <a href="#operations">Operations</a>
+                <a href="#archive">Archive</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <article class="hero-article">
+                <div class="hero-image"></div>
+                <div class="hero-text">
+                    <div class="hero-meta">
+                        <span class="hero-category">Featured Investigation</span>
+                        <span class="hero-date">January 15, 2025</span>
+                    </div>
+                    <h1>The Ghost Submarine: Project AZORIAN Revealed</h1>
+                    <p class="hero-excerpt">Recently declassified CIA documents expose the full scope of the most audacious intelligence operation of the Cold War—a covert mission to raise a Soviet nuclear submarine from three miles beneath the Pacific Ocean.</p>
+                    <a href="#" class="hero-btn">Read Investigation</a>
+                </div>
+            </article>
+        </section>
+
+        <div class="section-header">
+            <h2 class="section-title">Latest Declassifications</h2>
+            <a href="#" class="view-all">View All →</a>
+        </div>
+
+        <section class="posts-container">
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Technology</span>
+                            <span class="post-date">Jan 10, 2025</span>
+                        </div>
+                        <h3>CORONA: America's First Spy Satellites</h3>
+                        <p>Newly released technical documents reveal how the CIA pioneered orbital reconnaissance, capturing millions of images of Soviet territory during the height of the Cold War.</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Operations</span>
+                            <span class="post-date">Jan 8, 2025</span>
+                        </div>
+                        <h3>The Canadian Caper: Behind the Argo Operation</h3>
+                        <p>Declassified cables and internal memos expose the intricate planning behind the 1980 extraction of American diplomats from revolutionary Iran using a fake film crew.</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Cold War</span>
+                            <span class="post-date">Jan 5, 2025</span>
+                        </div>
+                        <h3>Operation CHAOS: Domestic Surveillance Programs</h3>
+                        <p>Previously classified files detail the extent of CIA surveillance on American citizens during the 1960s anti-war movement and civil rights era.</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Cold War</span>
+                            <span class="post-date">Dec 28, 2024</span>
+                        </div>
+                        <h3>MK-ULTRA: The Mind Control Experiments</h3>
+                        <p>Disturbing new documents shed light on the CIA's research into behavioral modification, psychoactive drugs, and human experimentation during the 1950s and 60s.</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Operations</span>
+                            <span class="post-date">Dec 22, 2024</span>
+                        </div>
+                        <h3>Bay of Pigs: Post-Invasion Analysis</h3>
+                        <p>Internal CIA reports offer candid assessments of the failed 1961 Cuba invasion, detailing planning failures and intelligence miscalculations.</p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Technology</span>
+                            <span class="post-date">Dec 18, 2024</span>
+                        </div>
+                        <h3>The Berlin Tunnel: Underground Intelligence</h3>
+                        <p>Declassified engineering documents reveal how the CIA secretly tapped Soviet communications by building a tunnel beneath the divided city of Berlin.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <div class="categories-content">
+                <h2 class="categories-title">Explore by Category</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">❄️</div>
+                        <div class="category-name">Cold War</div>
+                        <div class="category-count">42 documents</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🎯</div>
+                        <div class="category-name">Operations</div>
+                        <div class="category-count">38 documents</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🛰️</div>
+                        <div class="category-name">Technology</div>
+                        <div class="category-count">29 documents</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">👁️</div>
+                        <div class="category-name">Surveillance</div>
+                        <div class="category-count">31 documents</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">
+                All documents sourced from official CIA Freedom of Information Act releases<br>
+                © 2025 Intelligence Declassified. Independent investigative journalism.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.post-card, .category-card, .hero-btn').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('This would navigate to the article page. Add your routing logic here!');
+            });
+        });
+    </script>
+</body>
+</html>

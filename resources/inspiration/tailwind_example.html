@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Declassified</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --p: 270 91% 65%;
+            --pf: 270 91% 55%;
+            --pc: 0 0% 100%;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom right, #4c1d95, #5b21b6, #6d28d9);
+        }
+        .pattern-overlay {
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.03) 30%, rgba(255,255,255,0.03) 70%, transparent 70%);
+            background-size: 30px 30px;
+        }
+        .scan-lines {
+            background: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(255,255,255,0.02) 4px, rgba(255,255,255,0.02) 8px);
+        }
+    </style>
+</head>
+<body class="bg-base-300">
+    <!-- Top Bar -->
+    <div class="bg-base-200 border-b border-base-300">
+        <div class="navbar max-w-7xl mx-auto px-4 min-h-0 py-3">
+            <div class="flex-1">
+                <span class="text-sm text-base-content/60">Thursday, January 15, 2026</span>
+            </div>
+            <div class="flex-none">
+                <div class="flex gap-6 text-sm">
+                    <a href="#subscribe" class="link link-hover text-base-content/60 hover:text-primary">Subscribe</a>
+                    <a href="#newsletter" class="link link-hover text-base-content/60 hover:text-primary">Newsletter</a>
+                    <a href="#contact" class="link link-hover text-base-content/60 hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-base-300 border-b border-base-200">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-extrabold tracking-tight mb-2">
+                    INTELLIGENCE <span class="text-primary">DECLASSIFIED</span>
+                </h1>
+                <p class="text-base-content/60">Investigating America's Secret History Through Declassified Documents</p>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-8 pt-6 border-t border-base-200">
+                <a href="#latest" class="link link-hover uppercase text-sm font-medium tracking-wider">Latest</a>
+                <a href="#investigations" class="link link-hover uppercase text-sm font-medium tracking-wider">Investigations</a>
+                <a href="#cold-war" class="link link-hover uppercase text-sm font-medium tracking-wider">Cold War</a>
+                <a href="#operations" class="link link-hover uppercase text-sm font-medium tracking-wider">Operations</a>
+                <a href="#archive" class="link link-hover uppercase text-sm font-medium tracking-wider">Archive</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="hero-gradient rounded-lg h-96 md:h-[500px] relative overflow-hidden">
+                    <div class="absolute inset-0 pattern-overlay opacity-20"></div>
+                </div>
+                <div>
+                    <div class="flex gap-4 mb-6 text-sm items-center">
+                        <div class="badge badge-primary badge-lg uppercase font-semibold">Featured Investigation</div>
+                        <span class="text-base-content/60">January 15, 2025</span>
+                    </div>
+                    <h2 class="text-5xl font-extrabold leading-tight mb-6">The Ghost Submarine: Project AZORIAN Revealed</h2>
+                    <p class="text-base-content/70 text-lg leading-relaxed mb-8">Recently declassified CIA documents expose the full scope of the most audacious intelligence operation of the Cold War—a covert mission to raise a Soviet nuclear submarine from three miles beneath the Pacific Ocean.</p>
+                    <button class="btn btn-primary btn-lg">Read Investigation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Header -->
+        <div class="max-w-7xl mx-auto px-4 mt-16 mb-8">
+            <div class="flex justify-between items-center">
+                <h2 class="text-3xl font-bold">Latest Declassifications</h2>
+                <a href="#" class="link link-primary font-medium">View All →</a>
+            </div>
+        </div>
+
+        <!-- Posts Grid -->
+        <section class="max-w-7xl mx-auto px-4 mb-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Post Card 1 -->
+                <div class="card bg-base-200 shadow-xl hover:-translate-y-2 transition-transform cursor-pointer">
+                    <figure class="h-60 hero-gradient relative overflow-hidden">
+                        <div class="absolute inset-0 scan-lines"></div>
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex gap-3 mb-2 text-xs items-center">
+                            <div class="badge badge-primary uppercase font-semibold">Technology</div>
+                            <span class="text-base-content/60">Jan 10, 2025</span>
+                        </div>
+                        <h3 class="card-title text-xl">CORONA: America's First Spy Satellites</h3>
+                        <p class="text-base-content/70 text-sm">Newly released technical documents reveal how the CIA pioneered orbital reconnaissance, capturing millions of images of Soviet territory during the height of the Cold War.</p>
+                    </div>
+                </div>
+
+                <!-- Post Card 2 -->
+                <div class="card bg-base-200 shadow-xl hover:-translate-y-2 transition-transform cursor-pointer">
+                    <figure class="h-60 hero-gradient relative overflow-hidden">
+                        <div class="absolute inset-0 scan-lines"></div>
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex gap-3 mb-2 text-xs items-center">
+                            <div class="badge badge-primary uppercase font-semibold">Operations</div>
+                            <span class="text-base-content/60">Jan 8, 2025</span>
+                        </div>
+                        <h3 class="card-title text-xl">The Canadian Caper: Behind the Argo Operation</h3>
+                        <p class="text-base-content/70 text-sm">Declassified cables and internal memos expose the intricate planning behind the 1980 extraction of American diplomats from revolutionary Iran using a fake film crew.</p>
+                    </div>
+                </div>
+
+                <!-- Post Card 3 -->
+                <div class="card bg-base-200 shadow-xl hover:-translate-y-2 transition-transform cursor-pointer">
+                    <figure class="h-60 hero-gradient relative overflow-hidden">
+                        <div class="absolute inset-0 scan-lines"></div>
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex gap-3 mb-2 text-xs items-center">
+                            <div class="badge badge-primary uppercase font-semibold">Cold War</div>
+                            <span class="text-base-content/60">Jan 5, 2025</span>
+                        </div>
+                        <h3 class="card-title text-xl">Operation CHAOS: Domestic Surveillance Programs</h3>
+                        <p class="text-base-content/70 text-sm">Previously classified files detail the extent of CIA surveillance on American citizens during the 1960s anti-war movement and civil rights era.</p>
+                    </div>
+                </div>
+
+                <!-- Post Card 4 -->
+                <div class="card bg-base-200 shadow-xl hover:-translate-y-2 transition-transform cursor-pointer">
+                    <figure class="h-60 hero-gradient relative overflow-hidden">
+                        <div class="absolute inset-0 scan-lines"></div>
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex gap-3 mb-2 text-xs items-center">
+                            <div class="badge badge-primary uppercase font-semibold">Cold War</div>
+                            <span class="text-base-content/60">Dec 28, 2024</span>
+                        </div>
+                        <h3 class="card-title text-xl">MK-ULTRA: The Mind Control Experiments</h3>
+                        <p class="text-base-content/70 text-sm">Disturbing new documents shed light on the CIA's research into behavioral modification, psychoactive drugs, and human experimentation during the 1950s and 60s.</p>
+                    </div>
+                </div>
+
+                <!-- Post Card 5 -->
+                <div class="card bg-base-200 shadow-xl hover:-translate-y-2 transition-transform cursor-pointer">
+                    <figure class="h-60 hero-gradient relative overflow-hidden">
+                        <div class="absolute inset-0 scan-lines"></div>
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex gap-3 mb-2 text-xs items-center">
+                            <div class="badge badge-primary uppercase font-semibold">Operations</div>
+                            <span class="text-base-content/60">Dec 22, 2024</span>
+                        </div>
+                        <h3 class="card-title text-xl">Bay of Pigs: Post-Invasion Analysis</h3>
+                        <p class="text-base-content/70 text-sm">Internal CIA reports offer candid assessments of the failed 1961 Cuba invasion, detailing planning failures and intelligence miscalculations.</p>
+                    </div>
+                </div>
+
+                <!-- Post Card 6 -->
+                <div class="card bg-base-200 shadow-xl hover:-translate-y-2 transition-transform cursor-pointer">
+                    <figure class="h-60 hero-gradient relative overflow-hidden">
+                        <div class="absolute inset-0 scan-lines"></div>
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex gap-3 mb-2 text-xs items-center">
+                            <div class="badge badge-primary uppercase font-semibold">Technology</div>
+                            <span class="text-base-content/60">Dec 18, 2024</span>
+                        </div>
+                        <h3 class="card-title text-xl">The Berlin Tunnel: Underground Intelligence</h3>
+                        <p class="text-base-content/70 text-sm">Declassified engineering documents reveal how the CIA secretly tapped Soviet communications by building a tunnel beneath the divided city of Berlin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="bg-base-200 border-t border-base-300 py-12 my-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-center">Explore by Category</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card bg-base-300 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer hover:border-primary border border-transparent">
+                        <div class="card-body items-center text-center">
+                            <div class="text-5xl mb-4">❄️</div>
+                            <h3 class="card-title">Cold War</h3>
+                            <p class="text-base-content/60 text-sm">42 documents</p>
+                        </div>
+                    </div>
+                    <div class="card bg-base-300 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer hover:border-primary border border-transparent">
+                        <div class="card-body items-center text-center">
+                            <div class="text-5xl mb-4">🎯</div>
+                            <h3 class="card-title">Operations</h3>
+                            <p class="text-base-content/60 text-sm">38 documents</p>
+                        </div>
+                    </div>
+                    <div class="card bg-base-300 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer hover:border-primary border border-transparent">
+                        <div class="card-body items-center text-center">
+                            <div class="text-5xl mb-4">🛰️</div>
+                            <h3 class="card-title">Technology</h3>
+                            <p class="text-base-content/60 text-sm">29 documents</p>
+                        </div>
+                    </div>
+                    <div class="card bg-base-300 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all cursor-pointer hover:border-primary border border-transparent">
+                        <div class="card-body items-center text-center">
+                            <div class="text-5xl mb-4">👁️</div>
+                            <h3 class="card-title">Surveillance</h3>
+                            <p class="text-base-content/60 text-sm">31 documents</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-center bg-base-200 border-t border-base-300 text-base-content/60 p-10">
+        <aside>
+            <p class="text-sm">
+                All documents sourced from official CIA Freedom of Information Act releases<br>
+                <span class="opacity-70">© 2025 Intelligence Declassified. Independent investigative journalism.</span>
+            </p>
+        </aside>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.card, .btn').forEach(el => {
+            el.addEventListener('click', (e) => {
+                if (el.tagName !== 'BUTTON' && el.tagName !== 'A') {
+                    e.preventDefault();
+                    alert('This would navigate to the article page. Add your routing logic here!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

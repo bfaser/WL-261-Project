@@ -1,0 +1,58 @@
+title = "The CIA D-class"
+author = "Brodin Faser"
+base_url = "https://bfaser.github.io/WL-261-Project"
+compile_sass = true
+build_search_index = true
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+minify_html = true
+
+theme = "papermod_2"
+
+taxonomies = [{ name = "tags", feed = true}]
+
+[search]
+include_title = true
+include_description = false
+include_path = false
+include_content = true
+index_format = "elasticlunr_json"
+
+[markdown]
+external_links_target_blank = true
+
+[markdown.highlighting]
+light_theme = "kanagawa-lotus"
+dark_theme = "kanagawa-dragon"
+
+[extra]
+
+[extra.papermod]
+title = "The CIA D-class"
+default_theme = "auto"
+theme = "dark"
+language_direction = "auto"
+keywords = []
+show_theme_toggle = true
+show_scroll_to_top = true
+show_code_copy_buttons = true
+show_reading_time = true
+show_word_count = false
+show_post_nav_links = true
+show_post_meta = true
+default_toc_open = false
+show_post_edit_button = false
+show_archive_year_count = true
+show_archive_month_count = true
+edit_post_url = "https://github.com/bfaser/WL-261-Project/tree/main"
+# copyright = ""
+date_format = "%m-%d-%Y"
+navigation = [
+    { url = "$BASE_URL/posts", title = "Posts"},
+    { url = "$BASE_URL/search", title = "Search"},
+]
+home_title = "The CIA D-class"
+home_content = ""
+social_icons = [
+     { url = "https://github.com/bfaser", title = "GitHub", icon = "github" },
+]
