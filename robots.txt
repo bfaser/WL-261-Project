@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://bfaser.github.io/WL-261-Project/sitemap.xml
